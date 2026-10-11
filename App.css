@@ -1,0 +1,708 @@
+
+/* =========================================
+   SALENA ROSE ABDULLAH ART WEBSITE
+   MAIN CSS STYLESHEET
+========================================= */
+
+
+/* =========================================
+   1. WEBSITE COLOURS
+   Change colours here
+========================================= */
+
+:root {
+  --primary: #3e281e;
+  --secondary: #a45528;
+  --accent: #e8a35b;
+  --background: #faf7f2;
+  --gallery-background: #f1e7dc;
+  --commission-background: #ead2b8;
+  --text: #29221c;
+  --white: #ffffff;
+  --hover: #723819;
+}
+
+
+/* =========================================
+   2. GLOBAL STYLING
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 18px;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   3. HEADER AND NAVIGATION
+========================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  background-color: var(--primary);
+  color: var(--white);
+
+  padding: 20px 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Artist name */
+
+.logo {
+  text-align: center;
+}
+
+.logo h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0;
+}
+
+.logo p {
+  font-size: 17px;
+  color: #e6c29b;
+  margin: 8px 0 0;
+}
+
+/* Navigation links */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+
+  padding: 12px 18px;
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+
+nav a:hover {
+  background-color: var(--secondary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Active page */
+
+nav a.active {
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+
+/* =========================================
+   4. HOME PAGE / HERO
+========================================= */
+
+.hero {
+  min-height: 550px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 80px 5%;
+
+  background: linear-gradient(
+    120deg,
+    #111111,
+    #704936
+  );
+
+  color: var(--white);
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.hero p {
+  font-size: 22px;
+  line-height: 1.8;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* Home page buttons */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+/* =========================================
+   5. ALL WEBSITE BUTTONS
+========================================= */
+
+.button {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--white);
+
+  font-size: 20px;
+  font-weight: bold;
+
+  padding: 16px 30px;
+  margin-top: 25px;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--hover);
+  transform: translateY(-3px);
+}
+
+/* Remove extra margin in button groups */
+
+.hero-buttons .button,
+.shop-buttons .button {
+  margin-top: 0;
+}
+
+
+/* =========================================
+   6. ABOUT THE ARTIST
+========================================= */
+
+.about {
+  min-height: 70vh;
+  padding: 80px 10%;
+
+  text-align: center;
+  background-color: var(--background);
+}
+
+.about h2 {
+  font-size: 48px;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 22px;
+  line-height: 1.9;
+
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+
+/* =========================================
+   7. ARTWORK GALLERY
+========================================= */
+
+.gallery {
+  background-color: var(--gallery-background);
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+/* Artwork grid */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+/* Artwork cards */
+
+.card {
+  background-color: var(--white);
+
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px #00000015;
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px #00000020;
+}
+
+/* Artwork images */
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Artwork title */
+
+.card h3 {
+  font-size: 26px;
+  margin: 20px 0 10px;
+}
+
+/* Artwork price */
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #965021;
+  margin: 10px 0;
+}
+
+
+/* =========================================
+   8. SHOP / COMMISSION ARTWORK
+========================================= */
+
+.commission {
+  min-height: 65vh;
+  padding: 80px 10%;
+
+  text-align: center;
+  background-color: var(--commission-background);
+}
+
+.commission h2 {
+  font-size: 48px;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.commission p {
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+/* Shop buttons */
+
+.shop-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+/* =========================================
+   9. CONTACT PAGE
+========================================= */
+
+.contact {
+  min-height: 70vh;
+
+  text-align: center;
+  padding: 70px 10%;
+
+  background-color: var(--background);
+}
+
+.contact h2 {
+  font-size: 48px;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+.contact p {
+  font-size: 20px;
+  line-height: 1.8;
+
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+
+/* =========================================
+   10. CONTACT AND COMMISSION FORMS
+========================================= */
+
+.contact form,
+.enquiry-form {
+  width: 100%;
+  max-width: 550px;
+
+  margin: 30px auto;
+  padding: 30px;
+
+  background-color: var(--white);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  text-align: left;
+  box-shadow: 0 5px 20px #00000015;
+}
+
+/* Form labels */
+
+.contact label,
+.enquiry-form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Text fields */
+
+.contact input,
+.contact select,
+.contact textarea,
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  width: 100%;
+  padding: 15px;
+
+  font-family: inherit;
+  font-size: 18px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  background-color: var(--white);
+}
+
+/* Selected field */
+
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus,
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Form submit buttons */
+
+.contact form button,
+.enquiry-form button {
+  background-color: var(--secondary);
+  color: var(--white);
+
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact form button:hover,
+.enquiry-form button:hover {
+  background-color: var(--hover);
+}
+
+.contact form button:disabled,
+.enquiry-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   11. INSTAGRAM SECTION
+========================================= */
+
+.social-links {
+  text-align: center;
+
+  margin: 50px auto;
+  padding: 30px;
+
+  max-width: 600px;
+}
+
+.social-links h3 {
+  font-size: 30px;
+  color: var(--primary);
+
+  margin-bottom: 20px;
+}
+
+.social-links p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Instagram button */
+
+.instagram-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #dc2743,
+    #bc1888
+  );
+
+  color: var(--white);
+
+  padding: 16px 30px;
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.instagram-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px #bc188850;
+}
+
+
+/* =========================================
+   12. FOOTER
+========================================= */
+
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+
+  text-align: center;
+  padding: 25px;
+
+  width: 100%;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 16px;
+  margin: 0;
+}
+
+
+/* =========================================
+   13. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1024px) {
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero h2 {
+    font-size: 44px;
+  }
+
+}
+
+
+/* =========================================
+   14. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Header */
+
+  header {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .logo h1 {
+    font-size: 27px;
+  }
+
+  .logo p {
+    font-size: 14px;
+  }
+
+  /* Navigation */
+
+  nav {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  /* Hero */
+
+  .hero {
+    min-height: 420px;
+    padding: 60px 6%;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+    white-space: normal;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  /* Headings */
+
+  h2,
+  .about h2,
+  .gallery h2,
+  .commission h2,
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  /* Paragraphs */
+
+  .about p,
+  .commission p,
+  .contact p {
+    font-size: 18px;
+  }
+
+  /* Gallery */
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 260px;
+  }
+
+  /* Sections */
+
+  .about,
+  .gallery,
+  .commission,
+  .contact {
+    padding: 50px 6%;
+  }
+
+  /* Buttons */
+
+  .button {
+    font-size: 17px;
+    padding: 14px 24px;
+  }
+
+  /* Forms */
+
+  .contact form,
+  .enquiry-form {
+    padding: 20px;
+  }
+
+  /* Instagram */
+
+  .social-links h3 {
+    font-size: 24px;
+  }
+
+  .instagram-button {
+    font-size: 17px;
+    padding: 14px 20px;
+  }
+
+}
+
+
+/* =========================================
+   END OF STYLESHEET
+========================================= */
